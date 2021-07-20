@@ -10,9 +10,6 @@ public class Player : MonoBehaviour
   private bool jump = false;
   private bool crouch = false;
 
-  // Lazy Win Condition
-  [SerializeField] private GameObject winText;
-
   public DialogueUI DialogueUI => dialogueUI;
 
   public IInteractable Interactable { get; set; }
@@ -61,8 +58,5 @@ public class Player : MonoBehaviour
       Destroy(other.gameObject);
     }
 
-    if (other.CompareTag("Win")) {
-      winText.SetActive(true);
-    }
   }
 }
